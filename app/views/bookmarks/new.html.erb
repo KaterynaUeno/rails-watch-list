@@ -1,0 +1,8 @@
+<h1>Let's create a bookmark!</h1>
+<p><%= simple_form_for [@list, @bookmark] do |f| %></p>
+<%= f.input :comment %>
+<%= f.association :movie %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to "See all bookmarks", lists_path, class: 'btn btn-primary' %>

@@ -1,7 +1,16 @@
-<h1>Here is your list</h1>
+<h1>My lists</h1>
 
 <div class="container">
-  <h1><%= @list.name %></h1>
+<ol>
+  <li><%= @list.name %></li>
+  </ol>
   </div>
+<% @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.movie.title %>
+  <%= bookmark.comment %>
+  <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Do you really want to delete?" }%>
+<%end %>
 
-<%= link_to "See all lists", lists_path %>
+
+<%= link_to "See all lists", lists_path, class: 'btn btn-primary'%>
+<%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>

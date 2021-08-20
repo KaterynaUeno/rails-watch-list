@@ -1,6 +1,11 @@
-<h1>List of Movies</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Your cinema</h1>
+    <p>Make your list of movies!</p>
+    <%= link_to 'Create a new list', new_list_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<h1>My lists:</h1>
 <p><% @lists.each do |list| %></p>
-<li><%= list.name %></li>
+<li><%= link_to list.name, list_path(list) %></li>
 <% end %>
-
-<%= link_to 'Create a new list', new_list_path  %>
