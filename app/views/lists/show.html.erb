@@ -1,16 +1,19 @@
-<h1>My lists</h1>
 
-<div class="container">
-<ol>
-  <li><%= @list.name %></li>
-  </ol>
-  </div>
-<% @list.bookmarks.each do |bookmark| %>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>My lists:</h2>
+       <li><%= @list.name %></li>
+    </div>
+    <% @list.bookmarks.each do |bookmark| %>
   <%= bookmark.movie.title %>
   <%= bookmark.comment %>
   <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Do you really want to delete?" }%>
 <%end %>
 
 
-<%= link_to "See all lists", lists_path, class: 'btn btn-primary'%>
-<%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+<%= link_to "See all lists", lists_path, class: 'btn btn-light'%>
+<%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-light' %>
+  </div>
+</div>
