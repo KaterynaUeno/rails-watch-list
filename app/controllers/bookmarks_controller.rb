@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-  params.require(:article).permit(:title, :body, :photo)
   def new
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new

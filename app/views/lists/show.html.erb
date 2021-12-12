@@ -1,6 +1,6 @@
 
 <div class="card-trip">
-  <img src="https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2852&q=80" />
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
       <h2>My lists:</h2>
@@ -12,7 +12,7 @@
   <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Do you really want to delete?" }%>
 <%end %>
 
-<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+
 <%= link_to "See all lists", lists_path, class: 'btn btn-light'%>
 <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-light' %>
   </div>
